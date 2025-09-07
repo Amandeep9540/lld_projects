@@ -1,6 +1,7 @@
-package chess_game;
+package chess_game.boardEntities;
 
-import chess_game.cellCodeStratergy.CellCodeStrategy;
+import chess_game.chessMoveHelpers.CellCoordinate;
+import chess_game.chess_pieces.Piece;
 
 public class Cell {
     private int row;

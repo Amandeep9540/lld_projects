@@ -1,9 +1,8 @@
 package chess_game.chessRuleEngine;
 
-import chess_game.Board;
-import chess_game.ChessMove;
-import chess_game.PieceColor;
-import chess_game.Player;
+import chess_game.boardEntities.Board;
+import chess_game.chessMoveHelpers.ChessMove;
+import chess_game.players.Player;
 
 public interface ChessRuleEngine {
     boolean isKingInCheck( ChessMove lastMove, Board board);

@@ -1,6 +1,9 @@
 package chess_game.chess_pieces;
 
-import chess_game.*;
+import chess_game.boardEntities.Board;
+import chess_game.chessMoveHelpers.BoardPathValidator;
+import chess_game.chessMoveHelpers.CellCoordinate;
+import chess_game.chessMoveHelpers.ChessMove;
 
 public class QueenPiece implements Piece {
     private PieceColor pieceColor;
@@ -16,7 +19,7 @@ public class QueenPiece implements Piece {
     }
 
     @Override
-    public boolean isValidMove(ChessMove chessMove, Board board,BoardPathValidator pathValidator) {
+    public boolean isValidMove(ChessMove chessMove, Board board, BoardPathValidator pathValidator) {
         CellCoordinate source = chessMove.getSourceCoordinate();
         CellCoordinate destination = chessMove.getDestinationCoordinate();
 

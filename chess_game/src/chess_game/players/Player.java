@@ -1,4 +1,6 @@
-package chess_game;
+package chess_game.players;
+
+import chess_game.chess_pieces.PieceColor;
 
 public class Player {
     private String name;

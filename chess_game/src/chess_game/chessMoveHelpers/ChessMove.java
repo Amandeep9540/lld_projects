@@ -1,4 +1,6 @@
-package chess_game;
+package chess_game.chessMoveHelpers;
+
+import chess_game.chess_pieces.Piece;
 
 public class ChessMove {
     private final String sourceCode;

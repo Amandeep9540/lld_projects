@@ -1,6 +1,6 @@
 package chess_game.cellCodeStratergy;
 
-import chess_game.CellCoordinate;
+import chess_game.chessMoveHelpers.CellCoordinate;
 
 public class DefaultCellCodeStrategy implements CellCodeStrategy{
 

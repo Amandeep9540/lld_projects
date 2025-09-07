@@ -1,10 +1,16 @@
 package chess_game.chessRuleEngine;
 
-import chess_game.*;
+import chess_game.boardEntities.Board;
+import chess_game.boardEntities.Cell;
 import chess_game.cellCodeStratergy.CellCodeStrategy;
 import chess_game.cellCodeStratergy.DefaultCellCodeStrategy;
-import chess_game.CellCoordinate;
+import chess_game.chessMoveHelpers.CellCoordinate;
+import chess_game.chessMoveHelpers.BoardPathValidator;
+import chess_game.chessMoveHelpers.ChessMove;
+import chess_game.chess_pieces.Piece;
+import chess_game.chess_pieces.PieceColor;
 import chess_game.chess_pieces.PieceType;
+import chess_game.players.Player;
 
 public class DefaultChessRuleEngine implements ChessRuleEngine {
 
@@ -22,7 +28,7 @@ public class DefaultChessRuleEngine implements ChessRuleEngine {
     }
 
     @Override
-    public boolean isKingInCheck( ChessMove lastMove, Board board) {
+    public boolean isKingInCheck(ChessMove lastMove, Board board) {
         Piece movingPiece = lastMove.getMovingPiece();
         if (movingPiece == null) return false;
 

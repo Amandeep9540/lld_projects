@@ -1,4 +1,4 @@
-package chess_game;
+package chess_game.chessMoveHelpers;
 
 public class CellCoordinate {
     private int row;

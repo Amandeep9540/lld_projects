@@ -1,8 +1,10 @@
-package chess_game;
+package chess_game.chessMoveHelpers;
+
+import chess_game.boardEntities.Board;
 
 public class BoardPathValidator {
 
-    public boolean isVerticalPathClear(Board board,CellCoordinate source, CellCoordinate destination) {
+    public boolean isVerticalPathClear(Board board, CellCoordinate source, CellCoordinate destination) {
         if (source.getCol() != destination.getCol()) return false;
 
         int startRow = Math.min(source.getRow(), destination.getRow()) + 1;

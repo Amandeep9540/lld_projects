@@ -1,6 +1,9 @@
-package chess_game;
+package chess_game.chessMoveHelpers;
 
+import chess_game.boardEntities.Board;
+import chess_game.boardEntities.Cell;
 import chess_game.chessRuleEngine.ChessRuleEngine;
+import chess_game.chess_pieces.Piece;
 
 public class MoveExecutor {
 

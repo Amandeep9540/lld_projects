@@ -1,5 +1,6 @@
-package chess_game;
+package chess_game.boardEntities;
 
+import chess_game.chessMoveHelpers.CellCoordinate;
 import chess_game.cellCodeStratergy.CellCodeStrategy;
 import chess_game.cellCodeStratergy.DefaultCellCodeStrategy;
 import chess_game.chess_pieces.*;
@@ -10,10 +11,10 @@ public class Board {
     private int totalCol;
     private CellCodeStrategy cellCodeStrategy;
 
-    Board(){
+    public Board(){
         this(8,8);
     }
-    Board(int row,int col){
+    public Board(int row,int col){
         this.totalCol = col;
         this.totalRow = row;
         intializedBoard(row,col);

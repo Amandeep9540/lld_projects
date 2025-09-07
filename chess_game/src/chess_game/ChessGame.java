@@ -1,7 +1,14 @@
 package chess_game;
 
+import chess_game.boardEntities.Board;
+import chess_game.chessMoveHelpers.BoardPathValidator;
+import chess_game.chessMoveHelpers.ChessMove;
+import chess_game.chessMoveHelpers.MoveExecutor;
 import chess_game.chessRuleEngine.ChessRuleEngine;
 import chess_game.chessRuleEngine.DefaultChessRuleEngine;
+import chess_game.chess_pieces.Piece;
+import chess_game.chess_pieces.PieceColor;
+import chess_game.players.Player;
 
 import java.util.*;
 
