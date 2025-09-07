@@ -1,11 +1,9 @@
 package chess_game.chess_pieces;
 
-import chess_game.Cell;
-import chess_game.Piece;
-import chess_game.PieceColor;
+import chess_game.*;
 
 public class QueenPiece implements Piece {
-    PieceColor pieceColor;
+    private PieceColor pieceColor;
 
     @Override
     public PieceColor getColor() {
@@ -13,12 +11,46 @@ public class QueenPiece implements Piece {
     }
 
     @Override
-    public boolean isValidMove(int fromCol, int fromRow, int toCol, int toRow, Cell[][] board) {
+    public void setColor(PieceColor pieceColor){
+        this.pieceColor = pieceColor;
+    }
+
+    @Override
+    public boolean isValidMove(ChessMove chessMove, Board board,BoardPathValidator pathValidator) {
+        CellCoordinate source = chessMove.getSourceCoordinate();
+        CellCoordinate destination = chessMove.getDestinationCoordinate();
+
+        int rowDiff = Math.abs(destination.getRow() - source.getRow());
+        int colDiff = Math.abs(destination.getCol() - source.getCol());
+
+        Piece destPiece = board.getCell(destination.getRow(), destination.getCol()).getPiece();
+
+        if (destPiece != null && destPiece.getColor() == this.pieceColor) {
+            return false;
+        }
+
+        if (source.getRow() == destination.getRow()) {
+            return pathValidator.isHorizontalPathClear(board,source, destination);
+        }
+
+        if (source.getCol() == destination.getCol()) {
+            return pathValidator.isVerticalPathClear(board,source, destination);
+        }
+
+        if (rowDiff == colDiff) {
+            return pathValidator.isDiagonalPathClear(board,source, destination);
+        }
+
         return false;
     }
 
     @Override
-    public boolean move(int toRow, int toCol, Cell[][] board) {
-        return false;
+    public String getPieceEmoji() {
+        return pieceColor == PieceColor.BLACK ? "\u265B" : "\u2655";
+    }
+
+    @Override
+    public PieceType getPieceType() {
+        return PieceType.QUEEN;
     }
 }

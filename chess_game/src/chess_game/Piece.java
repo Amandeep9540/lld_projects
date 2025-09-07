@@ -1,7 +1,11 @@
 package chess_game;
 
+import chess_game.chess_pieces.PieceType;
+
 public interface Piece {
     PieceColor getColor();
-    boolean isValidMove(int fromCol,int fromRow, int toCol, int toRow, Cell[][] board);
-    boolean move(int toRow, int toCol, Cell[][] board);
+    void setColor(PieceColor pieceColor);
+    boolean isValidMove(ChessMove chessMove, Board board,BoardPathValidator boardPathValidator);
+    String getPieceEmoji();
+    PieceType getPieceType();
 }
